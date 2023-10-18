@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
 body {
   position: relative;
   font-size: 20px;
@@ -44,13 +48,32 @@ a {
   background-color: gray;
 }
 
+
+
 .introduction {
   height: calc(100% - (50px + (32px * 2)));  /*Removes the header dimensions */
   background-color: antiquewhite;
   display: flex;
   justify-content: center; 
+  align-items: center;
 }
 
+.wrapper {
+  max-width: 1000px;
+
+}
+
+.intro-text-name {
+  margin: 0;
+  font-size: 7rem;
+}
+
+.intro-text {
+  font-size: 7rem;
+}
+.intro-desc {
+  width: 70ch;
+}
 .work {
   margin: 32px;
   height: 100%;
@@ -63,13 +86,14 @@ a {
   display:  grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 32px;
+  column-gap: 32px;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   max-height: 400px;
   padding: 16px;
-  
   border: 1px solid black
 }
 .card-img {
@@ -77,6 +101,7 @@ a {
   max-height: 200px;
 }
 .icon-container {
+  margin-block: auto 0;
   display: flex;
   justify-content: flex-end
 }
