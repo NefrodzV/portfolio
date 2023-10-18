@@ -1,5 +1,6 @@
 :root {
-  --default-padding: 32px;
+  --clr-primary: #1fe9ff;
+  --clr-secondary: #040720;
 }
 html,
 body {
@@ -12,6 +13,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 body {
+  color: white;
+  background-color: var(--clr-secondary);
   position: relative;
   font-size: 20px;
 }
@@ -21,10 +24,7 @@ header, ul {
 }
 
 header {
-  /* background-color: green; */
-  /* position: sticky; */
   padding: 32px;
-  /* top: 0px; */
 }
 nav {
   margin-left: auto;
@@ -41,21 +41,27 @@ ul {
 }
 
 a {
-  color: black;
+  color: white;
   text-decoration: none ;
 }
 
 .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 50px;
-  background-color: gray;
+  box-shadow: 0px 0px 6px var(--clr-primary);
+  transform: rotate(45deg);
 }
 
-
+.logo > h1 {
+  color: var(--clr-primary);
+  transform: rotate(-45deg);
+}
 
 .introduction {
   height: calc(100% - (50px + (32px * 2)));  /*Removes the header dimensions */
-  background-color: antiquewhite;
   display: flex;
   justify-content: center; 
   align-items: center;
@@ -63,7 +69,10 @@ a {
 
 .wrapper {
   max-width: 1000px;
+}
 
+.wrapper > :nth-child(1) {
+  color: var(--clr-primary);
 }
 
 .intro-text-name {
@@ -72,19 +81,30 @@ a {
 }
 
 .intro-text {
+  opacity: .5;
   font-size: 7rem;
 }
 .intro-desc {
   width: 70ch;
 }
 .work {
-  padding: var(--default-padding);
+  padding: 32px;
   height: 100%;
   min-height: 100%;
-  /* background-color: black; */
 }
 
-.container {
+.contact-icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.phone-icon, .email-icon {
+  width: 50px;
+  height: 50px;
+  margin-inline-end: 24px;
+}
+
+ .container {
   height: 100%;
   display:  grid;
   grid-template-columns: repeat(3, 1fr);
@@ -99,15 +119,18 @@ a {
   padding: 16px;
   border: 1px solid black
 }
+
 .card-img {
   width: 100%;
   max-height: 200px;
 }
+
 .icon-container {
   margin-block: auto 0;
   display: flex;
   justify-content: flex-end
 }
+
 .card-icon {
   background-color: black;
   width: 70px;
@@ -120,17 +143,18 @@ a {
   justify-content: center;
   height: 100%;
   width: 100%;
-  background-color: gray;
+  
 }
+
 .contact-wrapper {
   display: flex;
   height: 80%;
   width: 100%;
 }
+
 .info {
   align-self: center;
   padding-inline: 32px;
-  background-color: aqua;
   width: 40%;
 }
 
@@ -140,13 +164,11 @@ a {
 
 .contact-logo {
   width: 60%;
-  background-color: aliceblue;
 }
 
 .contact-icons {
   width: 70px;
   height: 70px;
-  background-color: blue;
 }
 
 
