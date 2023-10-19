@@ -2,12 +2,15 @@
   --clr-primary: #1fe9ff;
   --clr-secondary: #040720;
   --shadow: 0px 0px 6px var(--clr-primary);
+  --header-height: 125px;
+  --section-height: calc(100% - var(--header-height))
 }
 html,
 body {
   height: 100vh;
   margin: 0;
 }
+  
 
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
@@ -18,13 +21,18 @@ body {
   background-color: var(--clr-secondary);
   position: relative;
   font-size: 20px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-gutter: stable both-edges;
 }
+
 
 header, ul {
   display: flex;
 }
 
 header {
+  height: var(--header-height);
   padding: 32px;
 }
 nav {
@@ -84,7 +92,7 @@ a {
 }
 
 .introduction {
-  height: calc(100% - (50px + (32px * 2)));  /*Removes the header dimensions */
+  height: var(--section-height);  /*Removes the header dimensions */
   display: flex;
   justify-content: center; 
   align-items: center;
@@ -111,7 +119,8 @@ a {
   width: 70ch;
 }
 .work {
-  padding: 32px;
+  border: 1px solid var(--clr-primary);
+  padding:0px 32px;
   height: 100%;
   min-height: 100%;
 }
@@ -127,23 +136,23 @@ a {
   margin-inline-end: 24px;
 }
 
- .container {
-  height: 100%;
+.container {
+  height: 90%;
   display:  grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, .1fr);
-  gap: 32px;
+  grid-template-columns: repeat(3,auto);
+  grid-template-rows: repeat(2, 1fr);
   align-items: center;
-  justify-content: center;
-  justify-items: center;
+  gap: 4rem;
+  
+  
 }
 
 .card {
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  max-height: min-content;
-  max-width:300px;
+  height: calc(100% - 32px);
+  width: calc(100% - 32px);
   padding: 16px;
   border: 1px solid black
 }
@@ -154,7 +163,7 @@ a {
 }
 
 .icon-container {
-  
+  margin-block: auto 0;
   display: flex;
   justify-content: flex-end;
   gap:8px
@@ -217,6 +226,11 @@ a {
 .phone-icon {
   width: 50px;
   height: 50px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 
