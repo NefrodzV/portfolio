@@ -1,6 +1,7 @@
 :root {
   --clr-primary: #1fe9ff;
   --clr-secondary: #040720;
+  --shadow: 0px 0px 6px var(--clr-primary);
 }
 html,
 body {
@@ -54,14 +55,13 @@ ul > :nth-child(4) {
 
 .item:hover {
   transform: scale(1.2);
-  box-shadow: 0px 0px 6px var(--clr-primary);
+  box-shadow: var(--shadow)
 }
 .item a{
   text-align: center;
   width: 100%;
   max-width: 90px;
   padding: 16px;
-  
 }
 a {
   color: white;
@@ -131,14 +131,19 @@ a {
   height: 100%;
   display:  grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  column-gap: 32px;
+  grid-template-rows: repeat(2, .1fr);
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
 }
 
 .card {
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  max-height: 400px;
+  max-height: min-content;
+  max-width:300px;
   padding: 16px;
   border: 1px solid black
 }
@@ -149,15 +154,22 @@ a {
 }
 
 .icon-container {
-  margin-block: auto 0;
+  
   display: flex;
-  justify-content: flex-end
+  justify-content: flex-end;
+  gap:8px
 }
 
 .card-icon {
-  background-color: black;
-  width: 70px;
-  height: 70px;
+  cursor: pointer;
+  opacity: .6;
+  width: 60px;
+  height: 60px;
+  transition: opacity 1;
+}
+
+.card-icon:hover {
+  opacity: 1;
 }
 
 .contact {
@@ -187,11 +199,24 @@ a {
 
 .contact-logo {
   width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-logo > .logo {
+  font-size: 10rem;
+  min-width: 400px;
+  min-height: 400px;
+}
+.contact-icons {
+  margin-right: 16px;
+  width: 50px;
+  height: 50px;
 }
 
-.contact-icons {
-  width: 70px;
-  height: 70px;
+.phone-icon {
+  width: 50px;
+  height: 50px;
 }
 
 
