@@ -7,8 +7,9 @@
 }
 html,
 body {
-  height: 100vh;
-  margin: 0;
+  height: 100%;
+  min-height: 100vh;
+  
 }
   
 
@@ -17,16 +18,16 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 body {
+  
   color: white;
   background-color: var(--clr-secondary);
   position: relative;
   font-size: 24px;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-  scrollbar-gutter: stable both-edges;
 }
 
 
+
+  
 header, ul {
   display: flex;
 }
@@ -119,10 +120,8 @@ a {
   width: 70ch;
 }
 .work {
+  padding:64px 5vw;
   
-  padding:0px 5vw;
-  height: 150%;
-  max-height: 1450px;
 }
 
 .contact-icon-text {
@@ -137,7 +136,7 @@ a {
 }
 
 .container {
-  height: 90%;
+  
   display:  grid;
   grid-template-columns: repeat(3,auto);
   grid-template-rows: repeat(2, auto);
@@ -151,10 +150,10 @@ a {
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  height: calc(100% - 32px);
+  height: calc(100% - 16px);
   width: calc(100% - 32px);
   padding: 16px;
-  border: 1px solid black
+ 
 }
 
 .card-title {
@@ -192,22 +191,17 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  width: 100%;
   
 }
 
 .contact-wrapper {
   display: flex;
-  /* height: 80%;
-  width: 100%; */
-  padding: 0 5vw;
+  
+  padding: 5vh 5vw;
 }
 
 .info {
   align-self: center;
-
-  /* padding-inline: 32px; */
   width: 40%;
 }
 
@@ -242,6 +236,4 @@ a {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
-
-
 
