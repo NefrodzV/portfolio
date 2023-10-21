@@ -224,12 +224,13 @@ a {
   margin-bottom: 1rem;
 }
 
-@media(max-width: 600px) {
-  /* Need to make hambuerger menu for parts of the website */
-   /* header{
-    padding: 8px;
-  } */
 
+/* Helper classes */
+.small-text {
+  font-size: min(1rem * 1vh, 2rem);
+ }
+@media(max-width: 768px) {
+  
   nav {
     display: none;
     margin: 16px 0;
@@ -242,31 +243,8 @@ a {
     text-align: center;
   }
 
-  
-
   .intro-desc {
     margin-inline: auto;
   }
-/*
-  ul {
-    gap: 8px;
-  }
 
-  .item {
-    width: auto;
-  }
-
-  .item a{
-    font-size: 1rem;
-    padding: 8px;
-  }
-
-  
-  .logo > h1 {
-    font-size: 2rem;
-  }
-  
-  .intro-desc {
-    width: auto;
-  } */
 }
