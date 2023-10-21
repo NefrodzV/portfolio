@@ -13,7 +13,7 @@ body {
   color: white;
   background-color: var(--clr-secondary);
   position: relative;
-  font-size: 24px;
+  
 }
 
 section {
@@ -115,7 +115,6 @@ a {
   margin-inline: auto;
 }
 
-
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 25vw, 600px), 1fr));
@@ -133,11 +132,11 @@ a {
 }
 
 .card-title {
-  font-size:32px;
   margin-block: 5%;
+  font-size: clamp(2rem,3vw + .5rem, 2.5rem)
 }
 .card-description {
-  font-size: 20px;
+  font-size: clamp(1rem, .5rem + 4vw, 1.5rem);
 }
 .card-img {
   width: 100%;
