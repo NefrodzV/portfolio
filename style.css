@@ -110,6 +110,7 @@ a {
   width: max(60vw, 30ch)
 }
 .work {
+  aspect-ratio: 1 / .8;
   width: min(90%, 2400px);
   margin-inline: auto;
 }
@@ -119,6 +120,7 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 25vw, 600px), 1fr));
   align-items: center; 
+  gap: min(2vh, 32px)  min(4vw, 64px);
   
 }
 
