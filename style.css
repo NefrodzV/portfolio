@@ -79,7 +79,7 @@ a {
 }
 
 .logo > h1 {
-  font-size: min(9vw, 2rem);
+  font-size: min(9vw, 3rem);
   color: var(--clr-primary);
   transform: rotate(-45deg);
 }
@@ -120,17 +120,13 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   align-items: center; 
-  
-
 }
 
 .card {
-  
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
   padding: 16px;
- 
 }
 
 .card-title {
@@ -219,7 +215,7 @@ a {
 }
 
 .title {
-  font-size: 3rem;
+  font-size: min(5vw + 16px , 3rem);
   margin-bottom: 1rem;
 }
 
