@@ -8,6 +8,9 @@
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body { 
   position: relative;
@@ -22,9 +25,7 @@ section {
   margin-inline: auto;
 }
 
-
 header, ul {
-  
   display: flex;
 }
 
@@ -40,7 +41,11 @@ nav {
   margin-right: 0;
 }
 
-ul {
+.menu-icon {
+  display: none;
+}
+
+.menu {
   height: 100%;
   align-items: center;
   margin: 0;
@@ -49,7 +54,7 @@ ul {
   gap: 24px;
 }
 
-ul > :nth-child(4) {
+.menu > :nth-child(4) {
   border: 1px solid var(--clr-primary)
 }
 
@@ -57,7 +62,7 @@ ul > :nth-child(4) {
   display: flex;
   justify-content: center;
   width: max(5vw, 120px);
-   transition: transform .5s, box-shadow .5s;
+  transition: transform .5s, box-shadow .5s;
   border-radius: 5px;
 }
 
@@ -70,6 +75,7 @@ ul > :nth-child(4) {
   width: 100%;
   font-size: 100%;
   padding: min(1vw, 16px);
+  
 }
 a {
   color: white;
@@ -237,9 +243,46 @@ a {
 @media(max-width: 768px) {
   
   nav {
-    display: none;
-    margin: 16px 0;
+    position: relative;
   }
+
+  .menu-icon {
+    cursor: pointer;
+    display: block;
+    border-radius: 5px;
+    padding: 4px;
+    height: 35px;
+  }
+
+  .menu-icon[active] {
+    border: 1px solid var(--clr-primary);
+  }
+
+  .menu {
+    padding: 0;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 6px var(--clr-primary);
+    background-color: var(--clr-secondary);
+    position: fixed;
+    z-index: 1000;
+    top: 15%;
+    left: 102%; 
+    height: 60%;
+    width: 90%;
+    flex-direction: column;
+    transition: transform 1s;
+  }
+
+  .menu[show] {
+    transform: translate(-108%);
+  }
+
+ .item a {
+   font-size: 32px;
+  padding: 16px; 
+ }
 
   .wrapper {
     display: flex;
@@ -271,12 +314,8 @@ a {
     text-align: center;
   }
   .contact {
-
     justify-content: start;
   }
 
 }
 
-@media(max-width: 600px) {
-  
-}
