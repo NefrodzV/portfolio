@@ -17,10 +17,8 @@ body {
 }
 
 section {
-  
-  /* border: 1px solid white; */
+  min-height: 100vh;
   width: min(90%, 2400px);
-  /* min-height: 100vh; */
   margin-inline: auto;
 }
 
@@ -94,7 +92,7 @@ a {
   transform: rotate(-45deg);
 }
 .introduction {
-  height: calc(100vh - 100px);
+  min-height:  calc(100vh - 100px);
   display: flex;
   align-items: center;
 }
@@ -120,6 +118,7 @@ a {
   width: max(60vw, 30ch)
 }
 .work {
+  
   margin-inline: auto;
 }
 
