@@ -190,7 +190,7 @@ a {
 }
 
 .contact-logo {
-  width: 60%;
+  width: min(600px, 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -249,6 +249,24 @@ a {
   }
 
   .contact-wrapper {
+    margin-block: 10%;
     flex-direction: column-reverse;
   }
+
+  .phone-icon, .email-icon {
+
+    width: 35px;
+    height: 35px;
+  }
+  .contact-icon-text {
+    justify-content: center;
+  }
+  .info {
+    text-align: center;
+  }
+  .contact {
+
+    justify-content: start;
+  }
+
 }
