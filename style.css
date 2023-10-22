@@ -182,7 +182,7 @@ a {
 
 .info {
   align-self: center;
-  width :min(400px, 100%);
+  width :min(800px, 100%);
 }
 
 .info > * {
@@ -190,17 +190,21 @@ a {
 }
 
 .contact-logo {
-  width: min(600px, 100%);
+  width: min(1600px, 100%);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .contact-logo > .logo {
-  font-size: 10rem;
-  /* min-width: 400px;
-  min-height: 400px; */
+  width: min(20vw , 400px);
+  height: min(20vw , 400px);
+  
+  
 }
-.contact-icons {
+.contact-logo > .logo > h1
+ {
+  font-size: clamp(1.7rem, 8vw , 10rem);
+ }.contact-icons {
   margin-right: 16px;
   width: min(10vw, 60px);
   cursor: pointer;
@@ -226,10 +230,16 @@ a {
 }
 
 
+
+
 /* Helper classes */
 .small-text {
   font-size: min(.8rem + 1vw, 1.8rem);
  }
+
+.default-text {
+  font-size: clamp(1rem, 2vw , 2rem);
+}
 @media(max-width: 768px) {
   
   nav {
@@ -245,6 +255,10 @@ a {
   }
 
   .intro-desc {
+    margin-inline: auto;
+  }
+
+  .contact-logo {
     margin-inline: auto;
   }
 
@@ -269,4 +283,8 @@ a {
     justify-content: start;
   }
 
+}
+
+@media(max-width: 600px) {
+  
 }
