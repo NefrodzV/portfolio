@@ -11,14 +11,15 @@ h1,h2,h3,h4,h5,h6 {
 body { 
   /* border: 1px solid whitesmoke; */
   color: white;
-  background-color: var(--clr-secondary);
-  position: relative;
-  
+  background-color: var(--clr-secondary); 
 }
 
 section {
-  min-height: 100vh;
+  width: min(90%, 2400px);
+  min-height: 95vh;
+  margin-inline: auto;
 }
+
 
 header, ul {
   display: flex;
@@ -85,12 +86,20 @@ a {
 }
 
 .introduction {
-  height: calc(100vh - 189px);/*Removes the header dimensions */
-  display: flex;
+  /* height: calc(100vh - 3vw); */
+  /*Removes the header dimensions */
+  /* display: flex;
   justify-content: center; 
-  align-items: center;
+  align-items: center; */
+  /* display: flex;
+  align-items: center; */
+  display: flex
 }
+.wrapper {
+  margin-inline: auto;
+  margin-top: max(9vw, 100px);
 
+}
 .wrapper > :nth-child(1) {
   color: var(--clr-primary);
 }
@@ -101,7 +110,7 @@ a {
 }
 
 .intro-text {
-  font-size: clamp(1.7rem, 8vw , 7rem);
+  font-size: clamp(1.7rem, 8vw , 6rem);
   opacity: .5;
   
 }
@@ -111,7 +120,7 @@ a {
 }
 .work {
   aspect-ratio: 1 / .8;
-  width: min(90%, 2400px);
+  /* width: min(90%, 2400px); */
   margin-inline: auto;
 }
 
@@ -136,7 +145,7 @@ a {
   font-size: clamp(2rem,3vw + .5rem, 2.5rem)
 }
 .card-description {
-  font-size: clamp(1rem, .5rem + 4vw, 1.5rem);
+  font-size: clamp(1rem, .5rem + 3vw, 1.5rem);
 }
 .card-img {
   width: 100%;
@@ -146,7 +155,7 @@ a {
 }
 
 .icon-container {
-  margin-block: auto 0;
+  margin-block: 12px;
   display: flex;
   justify-content: flex-end;
   gap:8px
