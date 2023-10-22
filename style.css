@@ -225,7 +225,7 @@ a {
 
 /* Helper classes */
 .small-text {
-  font-size: min(1rem * 1vh, 2rem);
+  font-size: min(.8rem + 1vw, 1.8rem);
  }
 @media(max-width: 768px) {
   
