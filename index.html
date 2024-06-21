@@ -13,26 +13,55 @@
         <nav class="navigation">
             <img class="menu-icon" src="icons/bars-solid.svg" alt="">
             <ul class="menu">
-                <li class="item"><a href="#introduction">About</a></li>
-                <li class="item"><a href="#work">Work</a></li>
-                <li class="item"><a href="#contact">Contact</a></li>
-                <li class="item"><a href="#">Resume</a></li>
+                <li class="item"><a href="#introduction" id="about-item">Informaci&oacute;n</a></li>
+                <li class="item"><a href="#work" id="work-item">Proyectos</a></li>
+                <li class="item"><a href="#contact" id="contact-item">Contacto</a></li>
+                <li class="item"><a href="https://app.enhancv.com/share/0cceb0a1/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic" download="resume.pdf" id="resume-item">Resume</a></li>
             </ul>
         </nav>
     </header> 
     <section class="introduction">
         <div class="wrapper">
-            <h5 class="small-text">Hello there, my name is</h5>
+            <h5 class="small-text" id="hello">Hola, mi nombre es</h5>
             <h1 class="intro-text-name">Neftaly Rodr&#237;guez Vargas </h1>
-            <h1 class="intro-text">I am a web developer</h1>
-            <h4 class="intro-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum voluptates asperiores omnis voluptatibus eius error amet culpa reiciendis odit fugit? Odio minus aspernatur obcaecati sint tempore omnis, dicta accusantium dolores.</h4>
+            <h1 class="intro-text" id="intro-text">Soy un desarrollador web</h1>
+            <h4 class="intro-desc" id="intro-description">
+                Apasionado por la programaci&#xf3;n de computadoras con enfoqu&#xe9; en desarrollo de p&#xe1;ginas web, frontend y backend. 
+                Me gradu&#xe9; en la Universidad Interamericana en Ponce con bachillerato en Ciencias de Computadoras. Este es mi portafolio con algunos de mis proyectos m&#xe1;s recientes.</h4>
         </div> 
     </section>
     <section class="work" id="work"> 
         
-        <h2 class="title">Work</h2>
+        <h2 class="title">Proyectos</h2>
         <div class="container">
             <div class="card">
+                <img class= "card-img" src="./img/tempestas-weather.png">
+                <h3 class="card-title">Tempestas Weather</h3>
+                <h4 class="card-description">Pagina web que presenta las condiciones del tiempo. Los datos son suplidos de WeatherAPI. Creado con JS, CSS y Webpack </h4>
+                <div class="icon-container">
+                    <a href="https://github.com/NefrodzV/tempestas-weather?tab=readme-ov-file" ><img  class="card-icon" src="icons/github.svg" alt=""/></a>
+                    <a href="https://nefrodzv.github.io/tempestas-weather/" ><img class="card-icon" src="icons/arrow-up-right-from-square-solid.svg" alt=""/></a>
+                </div>
+            </div>
+            <div class="card">
+                <img class= "card-img" src="./img/nebula-register.png">
+                <h3 class="card-title">Nebula Register</h3>
+                <h4 class="card-description">Pagina de registro hecha con HTML, CSS y JS. Enfocado a la practica de manejar errores con CSS y JS</h4>
+                <div class="icon-container">
+                    <a href="https://github.com/NefrodzV/nebula-register" ><img  class="card-icon" src="icons/github.svg" alt=""/></a>
+                    <a href="https://nefrodzv.github.io/nebula-register/" ><img class="card-icon" src="icons/arrow-up-right-from-square-solid.svg" alt=""/></a>
+                </div>
+            </div>
+            <div class="card">
+                <img class= "card-img" src="./img/msgr.png">
+                <h3 class="card-title">App de mensajes</h3>
+                <h4 class="card-description">Pagina web de mensajes hecha a base de metodos de peticion. Creada con React, Vite, HTML, CSS y JS. Creacion de API y Frontend</h4>
+                <div class="icon-container">
+                    <a href="https://github.com/NefrodzV/messaging-app" ><img  class="card-icon" src="icons/github.svg" alt=""/></a>
+                    <a href="https://serene-babka-69b0e2.netlify.app/" ><img class="card-icon" src="icons/arrow-up-right-from-square-solid.svg" alt=""/></a>
+                </div>
+            </div>
+            <!-- <div class="card">
                 <img class= "card-img" src="./img/dummy-img.jpeg">
                 <h3 class="card-title">Lorem, ipsum.</h3>
                 <h4 class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit veritatis in non quas odit dignissimos! Quisquam quasi, consequatur debitis omnis ea nam non alias corporis quis. Ipsam corporis maxime cumque!</h4>
@@ -58,51 +87,24 @@
                     <img  class="card-icon" src="icons/github.svg" alt=""><a href="#" ></a></img>
                     <img class="card-icon" src="icons/arrow-up-right-from-square-solid.svg" alt=""><a href="#" ></a></img>
                 </div>
-            </div>
-            <div class="card">
-                <img class= "card-img" src="./img/dummy-img.jpeg">
-                <h3 class="card-title">Lorem, ipsum.</h3>
-                <h4 class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit veritatis in non quas odit dignissimos! Quisquam quasi, consequatur debitis omnis ea nam non alias corporis quis. Ipsam corporis maxime cumque!</h4>
-                <div class="icon-container">
-                    <img  class="card-icon" src="icons/github.svg" alt=""><a href="#" ></a></img>
-                    <img class="card-icon" src="icons/arrow-up-right-from-square-solid.svg" alt=""><a href="#" ></a></img>
-                </div>
-            </div>
-            <div class="card">
-                <img class= "card-img" src="./img/dummy-img.jpeg">
-                <h3 class="card-title">Lorem, ipsum.</h3>
-                <h4 class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit veritatis in non quas odit dignissimos! Quisquam quasi, consequatur debitis omnis ea nam non alias corporis quis. Ipsam corporis maxime cumque!</h4>
-                <div class="icon-container">
-                    <img  class="card-icon" src="icons/github.svg" alt=""><a href="#" ></a></img>
-                    <img class="card-icon" src="icons/arrow-up-right-from-square-solid.svg" alt=""><a href="#" ></a></img>
-                </div>
-            </div>
-            <div class="card">
-                <img class= "card-img" src="./img/dummy-img.jpeg">
-                <h3 class="card-title">Lorem, ipsum.</h3>
-                <h4 class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit veritatis in non quas odit dignissimos! Quisquam quasi, consequatur debitis omnis ea nam non alias corporis quis. Ipsam corporis maxime cumque!</h4>
-                <div class="icon-container">
-                    <img  class="card-icon" src="icons/github.svg" alt=""><a href="#" ></a></img>
-                    <img class="card-icon" src="icons/arrow-up-right-from-square-solid.svg" alt=""><a href="#" ></a></img>
-                </div>
-            </div>
+            </div> -->
         </div> 
     </section>
 
     <section class="contact" id="contact">
         <div class="contact-wrapper">
             <div class="info">
-                <h2 class="title">Contact me</h2>
-                <h3 class="default-text">Please get in contact with me if you think our work could be beneficial!</h3>
-                <h3 class="default-text">1234 Lorem, ipsum.</h3>
-                <h3 class="default-text">Lorem, ipsum dolor. 12345</h3>
-                <h3 class="contact-icon-text default-text"><img class="phone-icon" src="icons/phone-solid.svg">555-555-5555</h3>
-                <h3 class="contact-icon-text default-text"><img class="email-icon" src="icons/gmail.svg">Loremipsumdolorsit@gmail.com</h3>
-                <div>
+                <h2 class="title">Contacto</h2>
+                <h3 class="default-text">Contacteme si piensa que sere beneficioso para usted!</h3>
+                <!-- <h3 class="default-text">1234 Lorem, ipsum.</h3>
+                <h3 class="default-text">Lorem, ipsum dolor. 12345</h3> -->
+                <h3 class="contact-icon-text default-text"><img class="phone-icon" src="icons/phone-solid.svg">939-275-3535 &oacute; 787-207-4072</h3>
+                <h3 class="contact-icon-text default-text"><img class="email-icon" src="icons/gmail.svg">neftalyrv23@gmail.com</h3>
+                <!-- <div>
                     <img src="icons/discord.svg" alt="" class="contact-icons">
                     <img src="icons/linkedin.svg" alt="" class="contact-icons">
                     <img src="icons/whatsapp.svg" alt="" class="contact-icons">
-                </div>
+                </div> -->
             </div>
 
             <div class="contact-logo">
