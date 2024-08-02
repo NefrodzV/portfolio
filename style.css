@@ -10,9 +10,43 @@
   --accent: #92a8a3;
 }
 
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./font/Montserrat/static/Montserrat-Regular.ttf');
+}
+
 
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+  background-color: var(--background);
+  font-family: 'CustomFont', sans-serif;
+}
+
+header {
+  flex: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  padding: .5rem 12%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--secondary);
+}
+
+.logo {
+  cursor: `;
+}
+
+.mb-only {
+  display: none;
+}
+
 
 
