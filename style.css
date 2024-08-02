@@ -3,9 +3,9 @@
   --background: #fbfafb;
   /**Primary colors is for buttons */
   --primary: #957b8a;
-
   /** For hover*/
   --secondary: #aebdac;
+  --secondary30: hsl(113, 12%, 95%);
   /** Accent colors is for icons */
   --accent: #92a8a3;
 }
@@ -14,7 +14,6 @@
   font-family: 'CustomFont';
   src: url('./font/Montserrat/static/Montserrat-Regular.ttf');
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -36,17 +35,129 @@ header {
   position: fixed;
   padding: .5rem 12%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--secondary);
 }
 
-.logo {
-  cursor: `;
+button {
+  cursor: pointer;
 }
 
-.mb-only {
+.navbar {
+  height: 50px;
+  width: auto;
+  display: flex;
+  gap: .8rem;
+}
+.navbar h1 {
   display: none;
 }
+
+.navbar .close {
+  margin-inline: auto 0;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: inherit;
+  display: none;
+}
+
+.navbar a {
+  text-transform: capitalize;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap:.4rem;
+  opacity: 60%;
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity .5s;
+}
+
+.navbar a:hover {
+  opacity: 1;
+  background-color: var(--secondary) / 0.7;
+}
+.navbar a img {
+  height: 20px;
+  aspect-ratio: 1 /1;
+}
+
+.overlay {
+  display: none;
+}
+
+.hamburger {
+  aspect-ratio: 1 / 1;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  display: none;
+}
+
+.hamburger:hover, button.close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hamburger img, .navbar button.close img {
+  height: 20px;
+  aspect-ratio: 1 / 1;
+}
+
+.logo {
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.hidden-text {
+  position: absolute;
+  top: -100px;
+  overflow: hidden;
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    padding: 1rem;
+    height: auto;
+    display: none;
+    background-color: var(--background);
+  }
+  
+  .navbar[visible] {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 50%;
+    bottom: 0;
+  }
+  .navbar h1 {
+    display: block;
+  }
+  .navbar .close {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    
+  .overlay[visible] {
+    display: block;
+    position: fixed;
+    inset:  0 0 0 0;
+    background-color: rgba(0, 0, 0, 0.5)
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+
 
 
 
