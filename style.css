@@ -136,6 +136,10 @@ button {
     bottom: 0;
     animation: translate-in-right .5s forwards;
   }
+
+  .navbar[closing] {
+    animation: translate-out-right .5s forwards;
+  }
   .navbar h1 {
     display: block;
   }
@@ -151,7 +155,11 @@ button {
     position: fixed;
     inset:  0 0 0 0;
     background-color: rgba(0, 0, 0, 0.5);
-    animation:  fade-in .5s forwards
+    animation:  fade-in .5s forwards;
+  }
+
+  .overlay[closing] {
+    animation: fade-out .5s forwards;
   }
   .hamburger {
     display: block;
@@ -186,7 +194,17 @@ button {
   to {
     left: 50%;
   }
-  
 }
+
+@keyframes translate-out-right {
+  from {
+    left:50%
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
 
 
