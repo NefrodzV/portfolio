@@ -1,5 +1,6 @@
 :root {
-  --text: #080607;
+  --text: rgb(9, 7, 8);
+  --text70:rgba(9, 7, 8, 0.6);
   --background: #fbfafb;
   /**Primary colors is for buttons */
   --primary: #957b8a;
@@ -26,11 +27,12 @@ body {
   color: var(--text);
   background-color: var(--background);
   font-family: 'CustomFont', sans-serif;
- align-items: center;
+  align-items: center;
 }
 
 header {
-  background-color: var(--background);
+  
+  /* background-color: var(--background); */
   flex: 1;
   top: 0;
   left: 0;
@@ -42,6 +44,7 @@ header {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--secondary);
+  height: 2rem;
 }
 
 button {
@@ -116,18 +119,25 @@ button {
 }
 
 main {
-  margin: 8rem 0 0 0;
+  width: 100%;
+  /* max-width: 90%;
+  margin:  clamp(5rem, 2.5rem + 8vw, 8rem) 0 0 0; */
+  margin-top: calc(2rem + 1px + 1rem);
   display: flex;
   justify-items: center;
   flex-direction: column;
 }
 
 #hero {
-  padding: 1rem;
+  height: calc(100vh - 2rem - 1px - 1rem);
+  /* padding: 1rem; */
   background-color: var(--secondary30);
   display: flex;
-  gap: 1rem;
-  animation: fade-in 1s forwards;
+  gap: clamp(1.5rem, 2vw + 1rem, 3rem);
+  justify-content: center;
+  align-items: center;
+  /* Animation giving problems with z-index */
+  animation: fade-in 1s ease;
 }
 
 #hero div {
@@ -143,7 +153,9 @@ main {
 }
 
 #hero img {
-  height: max(250px, 40vw);
+  box-shadow:  0 0 12px black;
+  border-radius: 25px;
+  height: clamp(250px, 50vw, 750px);
   aspect-ratio: 2 / 3;
 }
 
@@ -153,7 +165,7 @@ main {
 }
 
 .section-subtext {
-  opacity: .7;
+  color: var(--text70);
   margin: 0;
   font-size:  clamp(1.5rem, 1.5vw + 1rem, 2.5rem);
 }
@@ -174,10 +186,17 @@ button.primary, a.primary {
   text-transform: uppercase;
   background-color: var(--primary);
   border: none;
+  
+  transition: transform .5s ease-in-out;
 }
 
+button.primary:hover, a.primary:hover {
+  transform: scale(1.025);
+}
 
 @media (max-width: 768px) {
+
+  
   .navbar {
     padding: 1rem;
     height: auto;
@@ -225,13 +244,9 @@ button.primary, a.primary {
     display: block;
   }
 
-  main {
-    display: flex;
-  }
-
   #hero {
     align-items: center;
-    flex-direction: column;
+    
   }
 
   #hero div h1 {
@@ -244,24 +259,9 @@ button.primary, a.primary {
 }
 
 
-@media(max-width: 500px) {
-  /* #hero div h1 {
-    font-size: 2.5rem;
-
-  }
-
-  #hero div h2 {
-    font-size: 1.8rem;
-  } */
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
+@media(max-width: 600px) {
+  #hero {
+    flex-direction: column;
   }
 }
 
