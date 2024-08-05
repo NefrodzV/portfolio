@@ -1,6 +1,6 @@
 :root {
-  --text: rgb(9, 7, 8);
-  --text70:rgba(9, 7, 8, 0.6);
+  --text: #090708;
+  --text70:#09070899;
   --background: #fbfafb;
   /**Primary colors is for buttons */
   --primary: #957b8a;
@@ -31,8 +31,8 @@ body {
 }
 
 header {
-  
-  /* background-color: var(--background); */
+  z-index: 1;
+  background-color: var(--background);
   flex: 1;
   top: 0;
   left: 0;
@@ -120,17 +120,17 @@ button {
 
 main {
   width: 100%;
-  /* max-width: 90%;
-  margin:  clamp(5rem, 2.5rem + 8vw, 8rem) 0 0 0; */
-  margin-top: calc(2rem + 1px + 1rem);
+  /* margin-top: calc(2rem + 1px + 1rem); */
   display: flex;
   justify-items: center;
   flex-direction: column;
 }
-
+section {
+  min-height: 600px;
+}
 #hero {
-  height: calc(100vh - 2rem - 1px - 1rem);
-  /* padding: 1rem; */
+  margin-top: 2rem;
+  height: 100vh;
   background-color: var(--secondary30);
   display: flex;
   gap: clamp(1.5rem, 2vw + 1rem, 3rem);
@@ -169,12 +169,72 @@ main {
   margin: 0;
   font-size:  clamp(1.5rem, 1.5vw + 1rem, 2.5rem);
 }
+
 .hidden-text {
   position: absolute;
   top: -100px;
   overflow: hidden;
 }
 
+#work {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  
+}
+
+#work h1 {
+  font-size: clamp(1.8rem, 2vw + 1rem, 2rem);
+  text-align: center;
+  /* margin: 50px 0 0 0; */
+}
+
+/* TODO make the cards responsive */
+#work .container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(40vw, 450px));
+  grid-template-rows: repeat(2, 500px);
+  justify-content: center;
+  gap: 1rem;
+}
+
+ .card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: .4rem;
+  background-color: var(--secondary30);
+}
+
+.card .header {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.card p {
+  
+}
+/*
+.card .header h2 {
+  margin: 0;
+  align-self: baseline;
+} */
+ .card .header svg {
+  height: 2rem;
+}
+
+.card img {
+  min-height: 150px;
+  background-color: black;
+  aspect-ratio: 3 / 2;
+}
+svg {
+  height: 100%;
+}
 button.primary, a.primary {
   color: inherit;
   display: block;
