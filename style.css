@@ -104,7 +104,7 @@ button {
   display: none;
 }
 
-.hamburger:hover, button.close:hover {
+.hamburger:hover, button.close:hover, .dropdown-content a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -187,10 +187,8 @@ section {
 #work h1 {
   font-size: clamp(1.8rem, 2vw + 1rem, 2rem);
   text-align: center;
-  /* margin: 50px 0 0 0; */
 }
 
-/* TODO make the cards responsive */
 #work .container {
   flex: 1;
   display: grid;
@@ -200,7 +198,10 @@ section {
   gap: 1rem;
 }
 
- .card {
+
+
+.card {
+  z-index: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -210,15 +211,16 @@ section {
 }
 
 .card .header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   
 }
 
 .card p {
+  
   font-size: 1rem;
   flex:1;
-  max-height: 4rem;
   overflow: hidden;
 }
 
@@ -228,16 +230,76 @@ section {
 } 
  .card .header svg {
   height: 2rem;
+  padding: 0;
 }
 
 .card img {
   background-color: black;
   aspect-ratio: 3 / 2;
-  min-height: 300px;
+  min-height: 280px;
 }
-svg {
+
+.dropdown {
+  position: relative;
+  min-height: 2rem;
+  width: max-content;
+  
+}
+
+.dropdown button {
   height: 100%;
+ border: none;
+ background-color: inherit;
 }
+
+/* .dropdown button:has(+.dropdown-content[visible]) {
+  display: none;
+  background-color: green;
+} */
+.dropdown button svg {
+  pointer-events: none;
+}
+.dropdown-content {
+  width: max-content;
+
+  display: none;
+  background-color: var(--background);
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.dropdown-content[visible] {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  animation: grow .2s forwards;
+  transform-origin: top right;
+}
+
+.dropdown-content[closing] {
+  animation: shrink .2s forwards;
+}
+.dropdown-content[visible] ~ button {
+  /* display: none; */
+  background-color: green;
+}
+
+.dropdown-content { 
+  border: 1px solid var(--accent);
+  /* display: none; */
+}
+.dropdown-content > *  {
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+  padding: .4rem;
+  
+}
+
 button.primary, a.primary {
   color: inherit;
   display: block;
@@ -249,7 +311,6 @@ button.primary, a.primary {
   text-transform: uppercase;
   background-color: var(--primary);
   border: none;
-  
   transition: transform .5s ease-in-out;
 }
 
@@ -317,22 +378,30 @@ button.primary:hover, a.primary:hover {
   }
 
   #work .container {
-    grid-template-columns: 90%;
+    grid-template-columns: auto;
     grid-template-rows: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
   }
 
-  #work .container .card {
-    
-  }
-  
 }
 
 
 @media(max-width: 600px) {
   #hero {
     flex-direction: column;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+    margin: .4rem;
+  }
+  .card img {
+    min-height: 150px;
+  }
+
+  .card .header svg {
+    height: 1.2rem;
   }
 }
 
@@ -373,6 +442,24 @@ button.primary:hover, a.primary:hover {
 
   to {
     left: 100%;
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
   }
 }
 
