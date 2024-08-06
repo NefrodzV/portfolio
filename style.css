@@ -195,7 +195,7 @@ section {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(2, minmax(250px, 450px));
-  grid-template-rows: repeat(2, 500px);
+  grid-template-rows: repeat(2, 450px);
   justify-content: center;
   gap: 1rem;
 }
@@ -216,7 +216,10 @@ section {
 }
 
 .card p {
-  height: 3rem;
+  font-size: 1rem;
+  flex:1;
+  max-height: 4rem;
+  overflow: hidden;
 }
 
 .card .header h2 {
@@ -230,6 +233,7 @@ section {
 .card img {
   background-color: black;
   aspect-ratio: 3 / 2;
+  min-height: 300px;
 }
 svg {
   height: 100%;
@@ -303,7 +307,6 @@ button.primary:hover, a.primary:hover {
 
   #hero {
     align-items: center;
-    
   }
 
   #hero div h1 {
@@ -316,6 +319,12 @@ button.primary:hover, a.primary:hover {
   #work .container {
     grid-template-columns: 90%;
     grid-template-rows: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+
+  #work .container .card {
+    
   }
   
 }
