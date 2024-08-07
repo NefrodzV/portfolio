@@ -132,19 +132,26 @@ main {
 /* section {
   min-height: 600px;
 } */
+/** Need to place the content in the hero section in a div and place the items*/
 #hero {
   margin-top: 2rem;
   height: 100vh;
   background-color: var(--secondary30);
   display: flex;
-  gap: clamp(1.5rem, 2vw + 1rem, 3rem);
   justify-content: center;
   align-items: center;
   /* Animation giving problems with z-index */
   animation: fade-in 1s ease;
 }
 
-#hero div {
+.hero-container {
+  max-width: 90%;
+  display: flex;
+  gap: clamp(1.5rem, 2vw + 1rem, 3rem);
+  
+}
+
+.hero-content{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,11 +159,11 @@ main {
   box-sizing: border-box;
 }
 
-#hero div a {
+.hero-content a {
   font-weight: bold;
 }
 
-#hero img {
+.hero-container img {
   box-shadow:  0 0 12px black;
   border-radius: 25px;
   height: clamp(250px, 50vw, 750px);
@@ -431,7 +438,8 @@ button.primary:hover, a.primary:hover {
 
 
 @media(max-width: 600px) {
-  #hero {
+  
+  .hero-container {
     flex-direction: column;
   }
 
