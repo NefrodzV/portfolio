@@ -11,7 +11,7 @@
     
     <header>
         <div  class='logo' title="Neftaly Rodríguez Vargas">Neftaly</div>
-        <button class="hamburger" title="menu button"><img src="./icons/bars-solid.svg"></button>
+        <button class="hamburger" title="menu button" aria-expanded="false"><img src="./icons/bars-solid.svg"></button>
         
         <nav class="navbar">
             <button class="close"><img src="./icons/xmark-solid.svg"><span class="hidden-text">close</span></button>
@@ -43,7 +43,8 @@
                         <div class="header">
                             <h2>Title for my project</h2>
                             <div class="dropdown" > 
-                                <button>
+                                <button aria-expanded="false">
+                                    <span class="hidden-text">Open menu</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#92a8a3" d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
                                 </button>
                                 <div class="dropdown-content" tabindex="0">
@@ -61,7 +62,8 @@
                         <div class="header">
                             <h2>Title for my project</h2>
                             <div class="dropdown" > 
-                                <button>
+                                <button aria-expanded="false">
+                                    <span class="hidden-text">Open menu</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#92a8a3" d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
                                 </button>
                                 <div class="dropdown-content" tabindex="0">
@@ -79,7 +81,8 @@
                         <div class="header">
                             <h2>Title for my project</h2>
                             <div class="dropdown" > 
-                                <button>
+                                <button aria-expanded="false">
+                                    <span class="hidden-text">Open menu</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#92a8a3" d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
                                 </button>
                                 <div class="dropdown-content" tabindex="0">
@@ -97,7 +100,8 @@
                         <div class="header">
                             <h2>Title for my project</h2>
                             <div class="dropdown" > 
-                                <button>
+                                <button aria-expanded="false">
+                                    <span class="hidden-text">Open menu</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#92a8a3" d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
                                 </button>
                                 <div class="dropdown-content" tabindex="0">
@@ -114,7 +118,7 @@
                 </div>
             </section>
             <section id="about-me">
-                <div class="about-me-wrapper">
+                <article class="about-me-wrapper">
                     <img src="./img/ali-morshedlou-WMD64tMfc4k-unsplash.jpg" alt="some picture">
                     <div class="container"> 
                         <h1>About me</h1>
@@ -123,10 +127,44 @@
                         </p>
                         <button class="primary">Download Resume</button>
                     </div>
-                </div>
-                <div class="skills-container">
+                </article>
+                <article class="skills-container">
                     <h2>My skills</h2>
-                </div>
+                    <div class="skills-list">
+                        <div class="skill-category">
+                            <div class="skill-title">
+                                Frontend
+                                
+                            </div>
+                            <button class="dropdown" aria-expanded="false" aria-controls="frontend-skills">
+                                <span class="hidden-text">open dropdown</span>
+                                <img src="./icons/angle-down-solid.svg" alt="dropdown icon"/>
+                            </button>
+                            <ul id='frontend-skills' tabindex="0">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Javascript</li>
+                                <li>React</li>
+                                <li>Accessibility</li>
+                                <li>Responsive Design</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-title">
+                                Backend
+                            </div>
+                            <button class="dropdown" aria-expanded="false" aria-controls="backend-skills">
+                                    <span class="hidden-text">open dropdown</span>
+                                    <img src="./icons/angle-down-solid.svg" alt="dropdown icon"/>
+                            </button>
+                            <ul id="backend-skills" tabindex="0">
+                                <li>NodeJS</li>
+                                <li>MongoDB</li>
+                                <li>Express</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
             </section>
     </main>
 </body>
