@@ -418,6 +418,31 @@ main {
   animation: shrinkY .3s forwards;
 }
 
+.skill-category ul li {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.skill-category ul li > i {
+  font-size: 3rem;
+}
+
+.exp-line {
+  height: 2px;
+  transform: scale(0);
+  animation: growX .5s forwards;
+  transform-origin: left;
+  background-color: var(--primary);
+}
+
+.exp-percent {
+  color: var(--primary);
+  font-weight: bolder;
+  margin-inline: auto 0;
+}
+
+
+
 button.primary, a.primary {
   color: inherit;
   display: block;
@@ -609,6 +634,17 @@ button.primary:hover, a.primary:hover {
 
   to {
     transform: scaleY(0)
+  }
+}
+
+@keyframes growX {
+
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
   }
 }
 
