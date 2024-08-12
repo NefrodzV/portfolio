@@ -412,6 +412,7 @@ main {
   display: none;
   flex-wrap: wrap;
   gap: .8rem;
+  align-items: center;
   transform-origin: top;
 }
 .skill-category ul[visible] {
@@ -424,8 +425,10 @@ main {
 }
 
 .skill-category ul li {
+  opacity: 0;
   flex: 1;
   display: flex;
+  animation: fade-in 2s forwards;
   justify-content: space-evenly;
   gap: .5rem;
 }
