@@ -167,10 +167,9 @@ main {
 }
 
 .hero-container img {
-  box-shadow:  0 0 12px black;
   border-radius: 25px;
-  height: clamp(250px, 50vw, 750px);
-  aspect-ratio: 2 / 3;
+  height: clamp(200px, 50vw, 500px);
+  aspect-ratio: 1 / 1;
 }
 
 .section-text {
@@ -321,11 +320,9 @@ main {
 }
 
 .about-me-wrapper {
-
-  
   width: 90%;
   padding-block: 3.5rem;
-  background-color: var(--secondary);
+  background-color: var(--secondary30);
   display: flex;
   justify-content: center;
 }
@@ -349,7 +346,6 @@ main {
 
 .image-container {
   flex: 1;
-  
   width: 50%;
   display: flex;
   justify-content: center;
@@ -357,9 +353,8 @@ main {
 }
 
 .image-container > img {
-  width: clamp(150px, 75%, 450px);
+  width: clamp(150px, 50vw, 300px);
   aspect-ratio:  1 / 1;
-  border-radius: 50%;
 }
 .about-me-wrapper .container h1 {
   margin-block:   0;
@@ -598,11 +593,6 @@ button.primary:hover, a.primary:hover {
     
     flex-direction: column;
   }
-  .about-me-wrapper img {
-    object-fit: cover;
-    border-radius: 50%;
-    align-self: center;
-  }
 }
 
 @keyframes fade-in {
@@ -631,13 +621,13 @@ button.primary:hover, a.primary:hover {
   }
 
   to {
-    left: 50%;
+    left: 25%;
   }
 }
 
 @keyframes translate-out-right {
   from {
-    left:50%
+    left:25%;
   }
 
   to {
