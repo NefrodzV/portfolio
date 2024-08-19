@@ -527,27 +527,39 @@ form .content {
   align-self: center;
 }
 
-/* .contact-wrapper .container {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap: 1rem;
-} */
+input.error, textarea.error {
+  outline-color: red;
+  display: block;
+}
 
+.error {
+  font-size: .9rem;
+  text-align: start;
+  display: none;
+  color: red;
+}
+
+.error[visible] {align-self: flex-start;
+  display: block;
+  animation: fade-in .5s forwards;
+}
+
+.error[closing] {
+  animation: fade-out .5s forwards;
+}
 .contact-wrapper .container .primary {
-  
+  flex: 1;
   display: flex;
   align-items: center;
   gap:.4rem;
-  
   text-transform:capitalize;
 }
 
 footer {
   display: flex;
   border-top: 1px solid var(--secondary);
-  width: 100%;
   height: 50px;
+  width: 100%;
   justify-content: center;
 }
 
