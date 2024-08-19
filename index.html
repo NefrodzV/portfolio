@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neftaly Rodriguez</title>
+    <link rel="icon" href="./icons/logo.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
           
@@ -143,7 +144,7 @@
                                 <span class="hidden-text">open dropdown</span>
                                 <img src="./icons/angle-down-solid.svg" alt="dropdown icon"/>
                             </button>
-                            <ul id='frontend-skills' tabindex="0" visible>
+                            <ul id='frontend-skills' tabindex="0">
                                 <li style="animation-delay: .4s;">
                                     <div  title='HTML5'class="skill-icon-container">                                    
                                         <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m71 460-41-460h451l-41 460-185 52" fill="#e34f26"/><path d="m256 472 149-41 35-394h-184" fill="#ef652a"/><path d="m256 208h-75l-5-58h80v-56h-142l15 171h127zm-1 147-63-17-4-45h-56l7 89 116 32z" fill="#ebebeb"/><path d="m255 208v57h70l-7 73-63 17v59l116-32 16-174zm0-114v56h137l5-56z" fill="#fff"/></svg>
@@ -284,15 +285,33 @@
             </section>
             <section id="contact">
                 <div class="contact-wrapper">
-                    <h1>Contact</h1>
-                    <p>If you think my work can be beneficial to you contact me</p>
-
-                    <div class="container">
-                        
-                    </div>
                     
+                    <!-- <p>If you think my work can be beneficial to you contact me</p> -->
+
+                    <form action="" method="post">
+                        <h1>Contact Me</h1>
+                        <div class="content">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" required>
+                            <div class="error"></div>
+                            <label for="message">Message</label>
+                            <textarea id="message "maxlength="500" minlength="0" name="message" required rows="10"></textarea>
+                            <div class="error"></div>
+                            <button class="primary" type="submit">Submit</button>
+                        </div>
+                    </form>
+
+                   
                 </div>
             </section>
     </main>
+    <footer>
+        <div>
+            <span>Neftaly &#169</span> <a href="https://github.com/NefrodzV"><img src="./icons/github.svg" title="Github icon"></a>
+        </div>
+        <div>
+
+        </div>
+    </footer>
 </body>
 </html>
