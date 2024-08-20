@@ -28,57 +28,59 @@ const menuClickHandler = () => {
     }, { once: true })
 }
     
-const onSubmitContactForm = (e) => {
-    e.preventDefault()
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    const emailError = errorElements[0]
-    const messageError = errorElements[1]
-    const data = Object.fromEntries(new FormData(e.target))
-    let hasErrors = false
-
-    if(data.email.length === 0) {
-        hasErrors = true
-        emailError.textContent = 'Please write your email before submitting!'
-        emailError.setAttribute('visible', "")
-        
-    }
-
-    if(!emailRegex.test(data.email)) {
-        hasErrors = true
-        emailError.textContent = 'Invalid email'
-        emailError.setAttribute('visible', "")
-        
-    }
-
-    if(data.message.length === 0) {
-        console.log('Message is empty')
-        hasErrors = true
-        messageError.textContent = "There is no message to send"
-        messageError.setAttribute('visible', '')
-        
-    }
-
-    
-
-    if(hasErrors) return
-    // Removing animations if there is no errors
-    if(emailError.hasAttribute('visible')) {
-        emailError.setAttribute('closing', '')
-        emailError.addEventListener('animationend', () => {
-            emailError.removeAttribute('visible')
-            emailError.removeAttribute('closing')
-        }, { once : true})
-    }
-
-    if(messageError.hasAttribute('visible')) {
-        messageError.setAttribute('closing', '')
-        messageError.addEventListener('animationend', () => {
-            messageError.removeAttribute('visible')
-            messageError.removeAttribute('closing')
-        }, { once : true })
-    }
-    // Theres no errors continue the logic here
-}
+// const onSubmitContactForm = (e) => {
+//     e.preventDefault()
+//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+//     const emailError = errorElements[0]
+//     const messageError = errorElements[1]
+//     const data = Object.fromEntries(new FormData(e.target))
+//     let hasErrors = false
+// 
+//     // If this is not empty a bot is filling the form
+//     if(data.fullname.length != 0) return
+// 
+//     if(data.email.length === 0) {
+//         hasErrors = true
+//         emailError.textContent = 'Please write your email before submitting!'
+//         emailError.setAttribute('visible', "")
+//         
+//     }
+// 
+//     if(!emailRegex.test(data.email)) {
+//         hasErrors = true
+//         emailError.textContent = 'Invalid email'
+//         emailError.setAttribute('visible', "")
+//         
+//     }
+// 
+//     if(data.message.length === 0) {
+//         console.log('Message is empty')
+//         hasErrors = true
+//         messageError.textContent = "There is no message to send"
+//         messageError.setAttribute('visible', '')
+//     }
+// 
+//     
+// 
+//     if(hasErrors) return
+//     // Removing animations if there is no errors
+//     if(emailError.hasAttribute('visible')) {
+//         emailError.setAttribute('closing', '')
+//         emailError.addEventListener('animationend', () => {
+//             emailError.removeAttribute('visible')
+//             emailError.removeAttribute('closing')
+//         }, { once : true})
+//     }
+// 
+//     if(messageError.hasAttribute('visible')) {
+//         messageError.setAttribute('closing', '')
+//         messageError.addEventListener('animationend', () => {
+//             messageError.removeAttribute('visible')
+//             messageError.removeAttribute('closing')
+//         }, { once : true })
+//     }
+//     // Theres no errors continue the logic here
+// }
 
 navItems.forEach(item => item.addEventListener("click", menuClickHandler))
 hamburgerButton.addEventListener("click", openNavbar)
@@ -128,5 +130,4 @@ skillCategoryDropdownButtons.forEach((element) => {
     })
 })
 
-contactForm.addEventListener('submit', onSubmitContactForm)
 
