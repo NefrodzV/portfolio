@@ -100,13 +100,13 @@ dropdownButtons.forEach((element) => {
                  * can be the case that mobile cannot trigger some 
                  * listeners and are not removed */
                 dropdownContent.removeEventListener('mouseleave', closeDropdown)
-                dropdownContent.removeEventListener('focusout', closeDropdown)
+                // dropdownContent.removeEventListener('focusout', closeDropdown)
             }, { once: true })
         }
         button.setAttribute('aria-expanded',true)
         dropdownContent.toggleAttribute('visible')
         dropdownContent.addEventListener('mouseleave', closeDropdown ,{once: true})
-        dropdownContent.addEventListener('focusout', closeDropdown, {once: true})
+        // dropdownContent.addEventListener('focusout', closeDropdown, {once: true})
         dropdownContent.focus()
     })
 })
@@ -129,5 +129,4 @@ skillCategoryDropdownButtons.forEach((element) => {
         dropdownContent.toggleAttribute('visible')
     })
 })
-
 
