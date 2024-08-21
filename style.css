@@ -246,6 +246,7 @@ main {
 }
 
 .card img {
+  width: 100%;
   background-color: black;
   aspect-ratio: 3 / 2;
   min-height: 280px;
@@ -513,7 +514,7 @@ form .content {
   background-color: var(--secondary);
   margin-block: 4rem;
   box-shadow: 0 0 3px rgba(0,0,0, .5);
-  width: 700px;
+  width: min(700px, 90%);
   height: 400px;
   display: grid;
   grid-template-columns: 40% auto;
@@ -740,6 +741,7 @@ a.primary img {
   }
   .card img {
     min-height: 150px;
+    aspect-ratio: 2 / 1;
   }
 
   .card .header svg {
@@ -759,6 +761,8 @@ a.primary img {
   }
 
   .contact-card .details {
+    display: flex;
+    flex-direction: column;
     padding: .8rem;
   }
 }
