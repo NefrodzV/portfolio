@@ -258,7 +258,7 @@ main {
   padding: 1rem;
   border-radius: var(--border-radius);
   background-color: var(--background);
-  box-shadow: 0 2px 6px rgb(9, 7, 8, .3);
+  box-shadow: 0 0px 12px rgb(9, 7, 8, .3);
 }
 
 .card .header {
