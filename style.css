@@ -22,7 +22,9 @@
 html {
   scroll-behavior: smooth;
 }
-
+button, a {
+  min-height: 2rem;
+}
 body {
   margin: 0;
   display: flex;
@@ -104,6 +106,7 @@ button {
 }
 
 .navbar .close {
+  aspect-ratio:  1 / 1;
   margin-inline: auto 0;
   border: none;
   border-radius: var(--border-radius);
@@ -152,19 +155,10 @@ button {
   background-color: var(--secondary);
   color: var(--background);
 }
-/* .hamburger:hover, button.close:hover,
-.dropdown-content a:hover,
-.skill-category .dropdown:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-} */
 
 .close {
   padding: 0
 }
-/* .hamburger img, .navbar button.close img {
-  height: 20px;
-  aspect-ratio: 1 / 1;
-} */
 
 .logo {
   cursor: pointer;
@@ -177,14 +171,10 @@ button {
 
 main {
   width: 100%;
-  /* margin-top: calc(2rem + 1px + 1rem); */
   display: flex;
   justify-items: center;
   flex-direction: column;
 }
-/* section {
-  min-height: 600px;
-} */
 /** Need to place the content in the hero section in a div and place the items*/
 #hero {
   margin-top: 2rem;
@@ -199,9 +189,7 @@ main {
 
 .hero-container {
   max-width: 90%;
-  /* display: flex; */
   gap: clamp(1.5rem, 2vw + 1rem, 3rem);
-  
 }
 
 .hero-content{
@@ -322,10 +310,6 @@ main {
   color: var(--primary);
 }
 
-/* .dropdown button:has(+.dropdown-content[visible]) {
-  display: none;
-  background-color: green;
-} */
 .dropdown button svg {
   pointer-events: none;
 }
@@ -348,7 +332,7 @@ main {
 .dropdown-content[visible] {
   display: flex;
   flex-direction: column;
-  gap: .2rem;
+  
   animation: grow .2s forwards;
   transform-origin: top right;
 }
@@ -494,10 +478,6 @@ main {
   transform-origin: top;
   overflow: hidden;
 }
-/* .skill-category ul[visible] {
-  display: flex;
-  animation: growY .3s forwards;
-} */
 
 .skill-category ul[closing] {
   animation: shrinkY .3s forwards;
@@ -538,9 +518,6 @@ main {
   box-sizing: border-box;
   margin-top: 4rem;
   padding: 0 1rem 1rem;
-  /* border-radius: 25px; */
-  /* border: 1px solid var(--text70); */
-  /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); */
   display: flex;
   flex-direction: column;
   width: min(600px, 90%);
@@ -551,47 +528,13 @@ main {
   margin: 0;
   background-color: var(--secondary30);
 }
-.contact-wrapper form {
-  box-sizing: border-box;
-  border-radius: .4rem;
-  box-shadow: 0 0 2px rgba(0,0,0.5);
-  display: flex;
-  flex-direction: column;
-  gap: .4rem;
-}
-
-form .content {
-  padding: 1rem;
-  box-sizing: border-box;
-  border-radius: .4rem;
-  display: flex;
-  flex-direction: column;
-  gap: .4rem;
-}
-.contact-wrapper label {
-  align-self: flex-start;
-}
 
 .contact-card {
   font-size: clamp(1rem, 1vw + .8rem, 1.5rem);
-  
   margin-block: 4rem;
-  /* box-shadow: 0 0 3px rgba(0,0,0, .5); */
-  
   width: min(700px, 90%);
-  /* height: 400px; */
   display: grid;
-  /* grid-template-columns: 40% auto; */
   gap: .4rem;
-}
-
-.contact-card > .logo {
-  width: 100%;
-  height: 100%;
-  background-color: var(--background);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .contact-card .details {
@@ -600,89 +543,47 @@ form .content {
   align-items: center;
   padding: 1rem;
   box-sizing: content-box;
-  background-color: var(--primary30);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary);
   gap: .4rem;
 }
 
+.details .container {
+  width: 100%;
+  display: flex;
+  gap: .4rem;
+}
 .details a {
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--primary);
   border-radius: 3px;
   padding: .4rem;
-  width: 200px;
+  flex: 1;
   color: var(--text);
   text-decoration: none;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 200px;
+  gap: .5rem;
   text-decoration: none;
   color: var(--text);
   justify-content: center;
-  background-color: var(--primary);
 }
 
 .details a:hover  {
-  background-color: var(--secondary);
+  background-color: var(--primary);
 }
 
 
 .contact-card .details a img {
-  height: 30px;
+  height: 3rem;
   aspect-ratio: 1 / 1;
 } 
 .contact-card img {
   height: 200px;
   aspect-ratio: 1 / 1;
 }
-.contact-wrapper input, .contact-wrapper textarea {
-  border: 1px solid currentColor;
-  resize: none;
-  font-family: inherit;
-  font-size: inherit;
-  transition: border-radius .5s;
-}
 
-.contact-wrapper input:focus, .contact-wrapper textarea:focus {
-  border-radius: .4rem;
-  outline-style: solid;
-  outline-width: .2rem;
-  outline-color: var(--accent);
-  border:none;
-}
-.contact-wrapper button {
-  align-self: center;
-}
-#fullname {
-  position: absolute;
-  top: -100%;
-  opacity: 0;
-}
-
-input.error, textarea.error {
-  outline-color: red;
-  display: block;
-}
-
-.error {
-  font-size: .9rem;
-  text-align: start;
-  display: none;
-  color: red;
-}
-
-.error[visible] {align-self: flex-start;
-  display: block;
-  animation: fade-in .5s forwards;
-}
-
-.error[closing] {
-  animation: fade-out .5s forwards;
-}
-.contact-wrapper .container .primary {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap:.4rem;
-  text-transform:capitalize;
-}
 
 footer {
   display: flex;
@@ -704,9 +605,11 @@ footer img {
   height: 24px;
 }
 button.primary, a.primary {
+  height: inherit;
   color: #090708;
   font-weight: bold;
-  display: block;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   font-size: var(--font-size);
   padding: 8px 12px;
@@ -727,6 +630,11 @@ a.primary img {
   aspect-ratio: 1 / 1;
 }
 
+@media(max-width: 1024px) {
+  :root {
+    --font-size: 1.2rem;
+  }
+}
 @media (max-width: 768px) {
   /* .skill-icon-container > svg {
     height: 2rem;
