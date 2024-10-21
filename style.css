@@ -120,6 +120,7 @@ button {
   align-items: center;
   gap:.4rem;
   opacity: 1;
+  font-weight: 700;
   color: var(--text);
   text-decoration: none;
   transition: opacity .5s;
@@ -544,7 +545,8 @@ main {
   padding: 1rem;
   box-sizing: content-box;
   border-radius: var(--border-radius);
-  border: 2px solid var(--primary);
+  border-top: .4rem solid var(--primary);
+  box-shadow: 0 0 6px rgb(9, 7, 8,.5);
   gap: .4rem;
 }
 
