@@ -556,6 +556,7 @@ main {
   gap: .4rem;
 }
 .details a {
+  cursor: pointer;
   aspect-ratio: 1 / 1;
   border: 2px solid var(--primary);
   border-radius: 3px;
@@ -590,10 +591,10 @@ main {
 
 footer {
   display: flex;
-  border-top: 1px solid var(--secondary);
   height: 50px;
   width: 100%;
   justify-content: center;
+  box-shadow: 0 0 1px rgba(9, 7, 8);
 }
 
 footer div {
