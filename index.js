@@ -10,6 +10,7 @@ const contactForm = document.getElementById('contact-form')
 const errorElements = document.querySelectorAll('.error')
 const emailInput = document.getElementById('email')
 const messageTextarea = document.getElementById('message')
+const projectCards = document.querySelectorAll('.card')
 const openNavbar = () => {
     hamburgerButton.setAttribute('aria-expanded', true)
     navbar.toggleAttribute("visible");
@@ -27,60 +28,6 @@ const menuClickHandler = () => {
         overlay.removeAttribute('closing')
     }, { once: true })
 }
-    
-// const onSubmitContactForm = (e) => {
-//     e.preventDefault()
-//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-//     const emailError = errorElements[0]
-//     const messageError = errorElements[1]
-//     const data = Object.fromEntries(new FormData(e.target))
-//     let hasErrors = false
-// 
-//     // If this is not empty a bot is filling the form
-//     if(data.fullname.length != 0) return
-// 
-//     if(data.email.length === 0) {
-//         hasErrors = true
-//         emailError.textContent = 'Please write your email before submitting!'
-//         emailError.setAttribute('visible', "")
-//         
-//     }
-// 
-//     if(!emailRegex.test(data.email)) {
-//         hasErrors = true
-//         emailError.textContent = 'Invalid email'
-//         emailError.setAttribute('visible', "")
-//         
-//     }
-// 
-//     if(data.message.length === 0) {
-//         console.log('Message is empty')
-//         hasErrors = true
-//         messageError.textContent = "There is no message to send"
-//         messageError.setAttribute('visible', '')
-//     }
-// 
-//     
-// 
-//     if(hasErrors) return
-//     // Removing animations if there is no errors
-//     if(emailError.hasAttribute('visible')) {
-//         emailError.setAttribute('closing', '')
-//         emailError.addEventListener('animationend', () => {
-//             emailError.removeAttribute('visible')
-//             emailError.removeAttribute('closing')
-//         }, { once : true})
-//     }
-// 
-//     if(messageError.hasAttribute('visible')) {
-//         messageError.setAttribute('closing', '')
-//         messageError.addEventListener('animationend', () => {
-//             messageError.removeAttribute('visible')
-//             messageError.removeAttribute('closing')
-//         }, { once : true })
-//     }
-//     // Theres no errors continue the logic here
-// }
 
 navItems.forEach(item => item.addEventListener("click", menuClickHandler))
 hamburgerButton.addEventListener("click", openNavbar)
@@ -111,22 +58,51 @@ dropdownButtons.forEach((element) => {
     })
 })
 
-skillCategoryDropdownButtons.forEach((element) => {
-    element.addEventListener('click', (e) => {
-        const button = e.target;
-        const dropdownContent = e.target.nextElementSibling;
-        if(dropdownContent.hasAttribute('visible')) {
-            button.setAttribute('aria-expanded', false)
-            dropdownContent.toggleAttribute('closing')
-            dropdownContent.addEventListener('animationend', () => {
-                dropdownContent.removeAttribute('visible')
-                dropdownContent.removeAttribute('closing')
-            },{ once: true })
-            return
-        }
-        button.setAttribute('aria-expanded', true)
-        dropdownContent.focus()
-        dropdownContent.toggleAttribute('visible')
+// Setup an intersection observer to the work/project section
+const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: [.5]
+}
+let step = 0
+// Need to add an observer to the single element perse or the card themselves
+const workSectionObserver = new IntersectionObserver((entries, observer) =>{
+    console.log("Intersection observer entries", entries
+    )
+    entries.forEach((entry, i)=> {
+            if(i % 2 === 0) {
+                if(entry.isIntersecting) {
+                    if (!entry.target.classList.contains('show-in-left')) {
+                        if(entry.target.classList.contains('leave-out-left')) {
+                            entry.target.classList.remove('leave-out-left');
+                        }
+                        entry.target.classList.add('show-in-left');
+                    }
+                } else {
+                    if (entry.target.classList.contains('show-in-left')) {
+                        entry.target.classList.remove('show-in-left');
+                        entry.target.classList.add('leave-out-left');
+                    }
+                }
+            } else {
+                if(entry.isIntersecting) {
+                    if (!entry.target.classList.contains('show-in-right')) {
+                        if(entry.target.classList.contains('leave-out-right')) {
+                            entry.target.classList.remove('leave-out-right');
+                        }
+                        entry.target.classList.add('show-in-right');
+                    }
+                } else {
+                    if (entry.target.classList.contains('show-in-right')) {
+                        entry.target.classList.remove('show-in-right');
+                        entry.target.classList.add('leave-out-right');
+                    }
+                }
+            }
     })
-})
+},options)
+
+// setting observer to the project cards
+projectCards.forEach((card) => workSectionObserver.observe(card))
+
 
