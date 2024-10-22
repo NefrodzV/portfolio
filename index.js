@@ -66,10 +66,8 @@ const options = {
 }
 let step = 0
 // Need to add an observer to the single element perse or the card themselves
-const workSectionObserver = new IntersectionObserver((entries, observer) =>{
-    console.log("Intersection observer entries", entries
-    )
-    entries.forEach((entry, i)=> {
+const projectCardObserver = new IntersectionObserver((entries, observer) =>{
+    entries.forEach((entry)=> {
         const direction = entry.target.getAttribute('data-animation')
 
         if(entry.isIntersecting) {
@@ -93,6 +91,6 @@ const workSectionObserver = new IntersectionObserver((entries, observer) =>{
 },options)
 
 // setting observer to the project cards
-projectCards.forEach((card) => workSectionObserver.observe(card))
+projectCards.forEach((card) => projectCardObserver.observe(card))
 
 
