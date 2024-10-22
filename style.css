@@ -854,6 +854,19 @@ a.primary img {
 .card.leave-out-right {
   animation: slide-out-right 1s forwards;
 }
+
+.contact-card {
+  opacity: 0;
+}
+
+.show-in-top {
+  animation: showInTop 1s forwards;
+}
+
+.leave-out-top {
+  animation: leaveOutTop 1s forwards;
+}
+
 @keyframes slide-in-left {
   from {
     opacity: 0;
@@ -902,4 +915,31 @@ a.primary img {
   }
 }
 
+@keyframes showInTop {
+
+  from {
+    
+    opacity: 0;
+    transform: translate(0, -30px);
+  }
+
+  to {
+    
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes leaveOutTop {
+
+  from {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(0, -30px);
+  }
+}
 

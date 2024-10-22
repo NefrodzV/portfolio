@@ -11,6 +11,9 @@ const errorElements = document.querySelectorAll('.error')
 const emailInput = document.getElementById('email')
 const messageTextarea = document.getElementById('message')
 const projectCards = document.querySelectorAll('.card')
+const aboutMeWrapper = document.querySelector('.about-me-wrapper')
+const contactCard = document.querySelector('.contact-card')
+
 const openNavbar = () => {
     hamburgerButton.setAttribute('aria-expanded', true)
     navbar.toggleAttribute("visible");
@@ -93,4 +96,24 @@ const projectCardObserver = new IntersectionObserver((entries, observer) =>{
 // setting observer to the project cards
 projectCards.forEach((card) => projectCardObserver.observe(card))
 
+// Setting intersection observer to about me wrapper element
+const showInTopOpts = {
+    root: null,
+    rootMargin: '0px 0px',
+    threshold: [.5]
+}
+const showInTopIntersectionObserver = new IntersectionObserver((entries) => {
+    entries?.forEach((entry) => {
+        if(entry.isIntersecting) {
+            entry.target.classList.remove('leave-out-top')
+            entry.target.classList.add('show-in-top')
+        } else {
+            entry.target.classList.remove('show-in-top')
+            entry.target.classList.add('leave-out-top')
+        }
+    })
+}, showInTopOpts)
 
+showInTopIntersectionObserver.observe(aboutMeWrapper)
+showInTopIntersectionObserver.observe(contactCard)
+// Setting the same intersection observer to skills list
