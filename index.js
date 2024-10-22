@@ -70,35 +70,25 @@ const workSectionObserver = new IntersectionObserver((entries, observer) =>{
     console.log("Intersection observer entries", entries
     )
     entries.forEach((entry, i)=> {
-            if(i % 2 === 0) {
-                if(entry.isIntersecting) {
-                    if (!entry.target.classList.contains('show-in-left')) {
-                        if(entry.target.classList.contains('leave-out-left')) {
-                            entry.target.classList.remove('leave-out-left');
-                        }
-                        entry.target.classList.add('show-in-left');
-                    }
-                } else {
-                    if (entry.target.classList.contains('show-in-left')) {
-                        entry.target.classList.remove('show-in-left');
-                        entry.target.classList.add('leave-out-left');
-                    }
-                }
+        const direction = entry.target.getAttribute('data-animation')
+
+        if(entry.isIntersecting) {
+            if(direction === 'left') {
+                entry.target.classList.remove('leave-out-left')
+                entry.target.classList.add('show-in-left')
             } else {
-                if(entry.isIntersecting) {
-                    if (!entry.target.classList.contains('show-in-right')) {
-                        if(entry.target.classList.contains('leave-out-right')) {
-                            entry.target.classList.remove('leave-out-right');
-                        }
-                        entry.target.classList.add('show-in-right');
-                    }
-                } else {
-                    if (entry.target.classList.contains('show-in-right')) {
-                        entry.target.classList.remove('show-in-right');
-                        entry.target.classList.add('leave-out-right');
-                    }
-                }
+                entry.target.classList.remove('leave-out-right')
+                entry.target.classList.add('show-in-right')
             }
+        } else {
+            if(direction === 'left') {
+                entry.target.classList.remove('show-in-left')
+                entry.target.classList.add('leave-out-left')
+            } else {
+                entry.target.classList.remove('show-in-right')
+                entry.target.classList.add('leave-out-right')
+            }
+        }
     })
 },options)
 
