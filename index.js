@@ -13,7 +13,7 @@ const messageTextarea = document.getElementById('message')
 const projectCards = document.querySelectorAll('.card')
 const aboutMeWrapper = document.querySelector('.about-me-wrapper')
 const contactCard = document.querySelector('.contact-card')
-
+const skillsCategory = document.querySelectorAll('.skill-category')
 const openNavbar = () => {
     hamburgerButton.setAttribute('aria-expanded', true)
     navbar.toggleAttribute("visible");
@@ -99,21 +99,55 @@ projectCards.forEach((card) => projectCardObserver.observe(card))
 // Setting intersection observer to about me wrapper element
 const showInTopOpts = {
     root: null,
-    rootMargin: '0px 0px',
+    rootMargin: '0px',
     threshold: [.5]
 }
+let lastTargetAnimated = null
 const showInTopIntersectionObserver = new IntersectionObserver((entries) => {
     entries?.forEach((entry) => {
+        console.log('is above viewport:', entry.target.getBoundingClientRect().bottom < 0)
         if(entry.isIntersecting) {
+            if(entry.target.classList.contains('skill-category'))
             entry.target.classList.remove('leave-out-top')
             entry.target.classList.add('show-in-top')
-        } else {
+        } else  {
             entry.target.classList.remove('show-in-top')
             entry.target.classList.add('leave-out-top')
+            entry.target.addEventListener('animationend', () => entry.target.classList.remove('leave-out-top'), { once: true })
         }
+
+        console.log('ratio of target is:', entry.intersectionRatio,  'target', entry.target)
     })
 }, showInTopOpts)
 
 showInTopIntersectionObserver.observe(aboutMeWrapper)
 showInTopIntersectionObserver.observe(contactCard)
-// Setting the same intersection observer to skills list
+/**  This intersection observer add the animation to the entry 
+target if its in view if the animation is starts on the target add fade in 
+or remove fade in to the listitems(svgs) in the ul*/
+
+const skillsCategoryIntersectionObserver = new IntersectionObserver((entries) => {
+    entries?.forEach((entry) => {
+        if(entry.isIntersecting) {
+            entry.target.classList.remove('leave-out-top')
+            entry.target.classList.add('show-in-top')
+            entry.target.addEventListener('animationstart', (e) => {
+                const ul = entry.target.children[1]
+                const listItems = [...ul.children]
+                listItems.forEach((item) => {
+                    item.classList.remove('fade-out')
+                    item.classList.add('fade-in')})
+            }, { once: true })
+        } else  {
+            entry.target.classList.remove('show-in-top')
+            entry.target.classList.add('leave-out-top')
+            entry.target.addEventListener('animationstart', (e) => {
+                const ul = entry.target.children[1]
+                const listItems = [...ul.children]
+                listItems.forEach((item) => {
+                    item.classList.remove('fade-in')})
+            }, { once: true })
+        }
+    })
+}, showInTopOpts)
+skillsCategory.forEach((category) => skillsCategoryIntersectionObserver.observe(category))

@@ -488,10 +488,10 @@ main {
   opacity: 0;
   flex: 1;
   display: flex;
-  animation: fade-in 2s forwards;
   justify-content: space-evenly;
   gap: .5rem;
 }
+
 .skill-icon-container > svg {
   cursor: pointer;
   height: 3rem;
@@ -859,12 +859,28 @@ a.primary img {
   opacity: 0;
 }
 
+.about-me-wrapper {
+  opacity: 0;
+}
+
+.skill-category {
+  opacity: 0;
+}
+
 .show-in-top {
   animation: showInTop 1s forwards;
 }
 
 .leave-out-top {
   animation: leaveOutTop 1s forwards;
+}
+
+.fade-in {
+  animation: fade-in 1s forwards;
+}
+
+.fade-out {
+  animation: fade-out 1s forwards;
 }
 
 @keyframes slide-in-left {
@@ -920,7 +936,7 @@ a.primary img {
   from {
     
     opacity: 0;
-    transform: translate(0, -30px);
+    transform: translate(0, -10px);
   }
 
   to {
@@ -939,7 +955,7 @@ a.primary img {
 
   to {
     opacity: 0;
-    transform: translate(0, -30px);
+    transform: translate(0, -10px);
   }
 }
 
