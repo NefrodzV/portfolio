@@ -102,12 +102,9 @@ const showInTopOpts = {
     rootMargin: '0px',
     threshold: [.5]
 }
-let lastTargetAnimated = null
 const showInTopIntersectionObserver = new IntersectionObserver((entries) => {
-    entries?.forEach((entry) => {
-        console.log('is above viewport:', entry.target.getBoundingClientRect().bottom < 0)
+    entries?.forEach((entry) => {        
         if(entry.isIntersecting) {
-            if(entry.target.classList.contains('skill-category'))
             entry.target.classList.remove('leave-out-top')
             entry.target.classList.add('show-in-top')
         } else  {
@@ -115,8 +112,6 @@ const showInTopIntersectionObserver = new IntersectionObserver((entries) => {
             entry.target.classList.add('leave-out-top')
             entry.target.addEventListener('animationend', () => entry.target.classList.remove('leave-out-top'), { once: true })
         }
-
-        console.log('ratio of target is:', entry.intersectionRatio,  'target', entry.target)
     })
 }, showInTopOpts)
 
