@@ -694,16 +694,6 @@ a.primary img {
     display: block;
   }
 
-  #hero {
-    align-items: center;
-  }
-
-  #hero div h1 {
-    text-align: center;
-  }
-  #hero div {
-    align-items: center;
-  }
 
   #work .container {
     grid-template-columns: auto;
@@ -720,9 +710,14 @@ a.primary img {
 
 @media(max-width: 600px) {
   .hero-container {
+    display: flex;
+    align-items: center;
     flex-direction: column;
   }
 
+  .section-text {
+    text-align: center;
+  }
   .card h2 {
     font-size: 1.2rem;
     margin: .4rem;
